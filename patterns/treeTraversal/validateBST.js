@@ -6,8 +6,8 @@ const validateBST = (root, min = -Infinity, max = Infinity) => {
 	if (root.val <= min || root.val >= max) return false;
 
 	return (
-		isValidBST(root.left, min, root.val) &&
-		isValidBST(root.right, root.val, max)
+		validateBST(root.left, min, root.val) &&
+		validateBST(root.right, root.val, max)
 	);
 };
 

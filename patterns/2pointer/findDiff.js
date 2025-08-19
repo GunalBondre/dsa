@@ -20,3 +20,10 @@ var findTheDifference = function (s, t) {
 };
 console.log(findTheDifference('abcd', 'abcde'));
 console.log(findTheDifference('a', 'aa'));
+
+/**
+ * post analysis
+ * pattern - hashmap + 2 pointer
+ * time complexity - o(n)
+ * space complexity (o(1))
+ */

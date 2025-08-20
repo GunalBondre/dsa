@@ -3,6 +3,8 @@
  * @param {number} k
  * @return {number}
  * 
+ * pattern - prefix sum + hashmap
+ * 
  * problem statement - 560. Subarray Sum Equals K
     
     Given an array of integers nums and an integer k, return the total number of subarrays whose sum equals to k.
@@ -21,16 +23,16 @@
  */
 var subarraySum = function (nums, k) {
 	let count = { 0: 1 };
-	let sum = 0;
 	let result = 0;
+	let sum = 0;
 
 	for (let i = 0; i < nums.length; i++) {
 		sum += nums[i];
 
-		if (count[sum - k] != undefined) {
+		if (count[sum - k] !== undefined) {
 			result += count[sum - k];
 		}
-		count[sum] = (count[sum] ?? 0) + 1;
+		count[sum] = count[sum] ?? 0 + 1;
 	}
 
 	return result;
